@@ -107,7 +107,7 @@
 // // value lookup via bracket notation (like python)
 // console.log(Bri["favMovie"])
 // console.log(Bri["favColors"][0])
-
+//---------------------------
 // // add key "pets" and values "Aiko" and "Casca" to existing "Bri" object
 // Bri.pets = ["Aiko", "Casca"]
 
@@ -115,7 +115,7 @@
 // if ("favColors" in Bri){
 //     console.log("Great. You have favorite colors!")
 // }
-
+// ----------------------
 // // built in methods
 // // Display the entire object, both keys and values
 // console.log(Bri);
@@ -129,7 +129,46 @@
 // // Display a key-value pair held in an array (like turning a dictionary into a list)
 // console.log(Object.entries(Bri));
 
+// ---------------------
+// object iteration
+let arrayOfObjects = [
+    {color: "blue", flavor: "blue blast"},
+    {color: "red", flavor: "cherry"},
+    {color: "yellow", flavor: "lemon"},
+    {color: "green", flavor: "green apple"},
+    {color: "pink", flavor: "strawberry"}
+];
+
+var colors = []
+var flavors = []
+
+// walk through each object in arrayOfObjects
+arrayOfObjects.forEach((line) => {
+
+    // while on each line, walk through each key-value pair in said line
+    Object.entries(line).forEach(([key, value]) => {
+
+        // while at each key-value pair -->
+        // if key = "color", add the value to our "colors" array
+        // otherwise (i.e. if key = "flavor"), add the value to our "flavors" array
+        if (key === "color") {
+            colors.push(value);
+        }
+        else {
+            flavors.push(value);
+        }
+    })
+})
+
 //////////////////
-// .map METHOD
-///////////////
-var theStagesOfJS = ["confidence", "sadness", "confusion", "realization", "debugging", "satisfaction"];
+// HIGHER ORDER FUNCTIONS
+//////////////// any function that takes another as input, or sends it as output
+// https://www.youtube.com/watch?v=H4awPsyugS0
+
+// for Arrays --> 
+    // map()
+    // sort()
+    // reduce()
+    // filter()
+
+
